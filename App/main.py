@@ -20,10 +20,6 @@ rightFrame.pack(side="right")
 textVariable = StringVar(value="Unmodified")
 
 
-def greet_in_label():
-    textVariable.set("Greet with button")
-
-
 label = Label(frame, textvariable=textVariable)
 label.pack(padx=3, pady=3)
 
@@ -33,8 +29,16 @@ button1 = Button(
 button1.pack(padx=3, pady=3)
 
 
+new_label_text = Entry(rightFrame, width=40)
+new_label_text.pack(padx=3, pady=3)
+
+
+def greet_in_label():
+    textVariable.set(new_label_text.get())
+
+
 button1 = Button(
-    rightFrame, text="Show Hello world in the label", command=greet_in_label)
+    rightFrame, text="Modify label", command=greet_in_label)
 button1.pack(padx=3, pady=3)
 
 
